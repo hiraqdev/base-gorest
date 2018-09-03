@@ -1,8 +1,29 @@
-hash: f7f2ebaae39d79a65cac184006bc420a3bcb6bfb3e204c4992acf4888aa1e760
-updated: 2018-08-30T23:05:10.554851151+07:00
+hash: efa1b072d40d9caa7ecdb5eb08569720fafb37db7229475513ea108e401a858b
+updated: 2018-09-04T00:20:15.801834529+07:00
 imports:
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
 - name: github.com/gorilla/handlers
   version: 7e0847f9db758cdebd26c149d0ae9d5d0b9c98ce
 - name: github.com/gorilla/mux
   version: e3702bed27f0d39777b0b37b664b6280e8ef8fbf
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/sirupsen/logrus
+  version: 3e01752db0189b9157070a0e1668a620f9a85da2
+- name: github.com/spf13/cobra
+  version: ef82de70bb3f60c65fb8eebacbb2d122ef517385
+  subpackages:
+  - cobra
+- name: github.com/spf13/pflag
+  version: 9a97c102cda95a86cec2345a6f09f55a939babf5
+- name: golang.org/x/crypto
+  version: 182538f80094b6a8efaade63a8fd8e0d9d5843dd
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: 1b73967140201b02a8420ee8555ed00a432e97c0
+  subpackages:
+  - unix
+  - windows
 testImports: []
