@@ -4,3 +4,14 @@ import:
   version: ^1.6.2
 - package: github.com/gorilla/handlers
   version: ^1.4.0
+- package: github.com/spf13/cobra
+  version: ^0.0.3
+  subpackages:
+  - cobra
+- package: github.com/spf13/pflag
+  version: ^1.0.2
+- package: github.com/sirupsen/logrus
+  version: ^1.0.6
+- package: golang.org/x/sys
+  subpackages:
+  - unix
