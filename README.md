@@ -14,6 +14,18 @@ Skeleton to create rest api using golang
 - Golang Code Standard
 - REST API: [JSONAPI](http://jsonapi.org)
 
+# Setup
+
+```
+WARNING
+
+You have to install glide!
+```
+
+```
+glide install
+```
+
 # Routes
 
 All available routes should be registered at: `app/routes.go` and placed at `app/modules`
