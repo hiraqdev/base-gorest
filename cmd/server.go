@@ -26,6 +26,7 @@ var serverCmd = &cobra.Command{
 			WriteTimeout: writeTimeout,
 		}
 
+		app.Env()
 		app.Gorest(options)
 	},
 }

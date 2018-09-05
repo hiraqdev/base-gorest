@@ -6,6 +6,13 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
+	"github.com/spf13/viper"
+)
+
+const (
+	// DefaultEnvPrefix is a constant variable used as prefix
+	// for all used environment variables
+	DefaultEnvPrefix = "GOREST"
 )
 
 // ServerConfig used to setup options to
@@ -18,6 +25,14 @@ type ServerConfig struct {
 	Address      string
 	ReadTimeout  int
 	WriteTimeout int
+}
+
+// Env used to initialize Viper.  By default
+// we are using viper to read configuration
+// from environment variables
+func Env() {
+	viper.AutomaticEnv()
+	viper.SetEnvPrefix(DefaultEnvPrefix)
 }
 
 // Gorest used to initiate main application server
