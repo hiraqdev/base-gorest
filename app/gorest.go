@@ -29,6 +29,7 @@ func Gorest(options ServerConfig) {
 		loggingMiddleware,
 		recoveryMiddleware,
 		jsonAPIHeaderResponseMiddleware,
+		jsonAPIHeaderFilterMiddleware,
 	)
 
 	srv := &http.Server{
