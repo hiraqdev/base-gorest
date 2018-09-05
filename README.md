@@ -50,7 +50,7 @@ You have to install glide!
 ```
 
 ```
-glide install
+glide up
 ```
 
 # Routes
