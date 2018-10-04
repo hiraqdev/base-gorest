@@ -44,6 +44,7 @@ func jsonAPIHeaderFilterMiddleware(h http.Handler) http.Handler {
 
 			j, _ := jsonAPIErrors.GetErrors()
 
+			w.Header().Set("Content-Type", "application/vnd.api+json")
 			w.WriteHeader(http.StatusUnsupportedMediaType)
 			w.Write(j)
 		case currentAcceptType != "application/vnd.api+json" && currentAcceptType != "":
@@ -53,6 +54,7 @@ func jsonAPIHeaderFilterMiddleware(h http.Handler) http.Handler {
 
 			j, _ := jsonAPIErrors.GetErrors()
 
+			w.Header().Set("Content-Type", "application/vnd.api+json")
 			w.WriteHeader(http.StatusNotAcceptable)
 			w.Write(j)
 		default:
