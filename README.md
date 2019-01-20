@@ -86,3 +86,9 @@ go run *.go server --addr=":8080"
 ```go
 go run *.go server --writeTimeout=20 --readTimeout=30 --addr=":8080"
 ```
+
+# Build
+
+```
+go build -o gorest
+```
