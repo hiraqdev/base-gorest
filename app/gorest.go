@@ -35,6 +35,16 @@ func Env() {
 	viper.SetEnvPrefix(DefaultEnvPrefix)
 }
 
+// routes used to register all available routers
+// parsing the data from Routers
+func routes(h *mux.Router) http.Handler {
+	for route, controller := range Routers {
+		h.HandleFunc(route, controller.Handler).Methods(controller.Method)
+	}
+
+	return h
+}
+
 // Gorest used to initiate main application server
 func Gorest(options ServerConfig) {
 	router := routes(mux.NewRouter())

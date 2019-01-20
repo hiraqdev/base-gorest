@@ -3,12 +3,22 @@ package app
 import (
 	"net/http"
 
-	"github.com/gorilla/mux"
 	"github.com/hiraqdev/base-gorest/app/modules/ping"
 )
 
-func routes(h *mux.Router) http.Handler {
-	h.HandleFunc("/ping", ping.Handler).Methods("GET")
+// Routers used to register all available routes
+var Routers route
 
-	return h
+type httpController struct {
+	Method  string
+	Handler httpHandler
+}
+
+type httpHandler func(h http.ResponseWriter, r *http.Request)
+type route map[string]httpController
+
+func init() {
+	// you should place all of your available routes here
+	Routers = make(map[string]httpController)
+	Routers["/ping"] = httpController{"GET", ping.Handler}
 }

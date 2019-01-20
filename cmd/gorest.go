@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hiraqdev/base-gorest/app"
 	"github.com/spf13/cobra"
 )
 
@@ -16,30 +15,23 @@ var defaultPort = ":8080"
 var defaultReadTimeout = 15
 var defaultWriteTimeout = 15
 
-var serverCmd = &cobra.Command{
+// gorestCmd used as main command line action
+var gorestCmd = &cobra.Command{
 	Use:   "gorest",
-	Short: "Gorest is a skeleton rest api using golang and gorilla",
+	Short: "Gorest is a skeleton rest api using golang and gorilla mux",
 	Run: func(cmd *cobra.Command, args []string) {
-		options := app.ServerConfig{
-			Address:      addr,
-			ReadTimeout:  readTimeout,
-			WriteTimeout: writeTimeout,
-		}
-
-		app.Env()
-		app.Gorest(options)
+		fmt.Println("Thank you for using Gorest, if you want to run your engine, use server command")
 	},
 }
 
 func init() {
-	serverCmd.Flags().StringVarP(&addr, "addr", "", defaultPort, "Setup your ip address and port, default: 8080")
-	serverCmd.Flags().IntVar(&writeTimeout, "writeTimeout", defaultWriteTimeout, "Set your write timeout, default: 15 seconds")
-	serverCmd.Flags().IntVar(&readTimeout, "readTimeout", defaultReadTimeout, "Set your read timeout, default: 15 seconds")
+	gorestCmd.AddCommand(serverCmd)
+	gorestCmd.AddCommand(routeCmd)
 }
 
 // Execute main cmd app
 func Execute() {
-	if err := serverCmd.Execute(); err != nil {
+	if err := gorestCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
