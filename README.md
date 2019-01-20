@@ -57,6 +57,22 @@ dep ensure
 
 All available routes should be registered at: `app/routes.go` and placed at `app/modules`
 
+You can list all of your routers from command line:
+
+```
+go run *.go routes
+```
+
+And an output will look like:
+
+```
++-------+-------------+
+| PATH  | HTTP METHOD |
++-------+-------------+
+| /ping | GET         |
++-------+-------------+
+```
+
 # Command Line
 
 ```go
@@ -64,9 +80,9 @@ go run *.go -h
 ```
 
 ```go
-go run *.go --addr=":8080"
+go run *.go server --addr=":8080"
 ```
 
 ```go
-go run *.go --writeTimeout=20 --readTimeout=30 --addr=":8080"
+go run *.go server --writeTimeout=20 --readTimeout=30 --addr=":8080"
 ```
