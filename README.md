@@ -10,6 +10,12 @@ Skeleton to create rest api using golang
 - Cmd Framework: [cobra](https://github.com/spf13/cobra)
 - Configuration: [viper](https://github.com/spf13/viper)
 
+# How To Use
+
+If you want to use this skeleton, you just need to clone this repo
+and dont forget to change all required path `github.com/hiraqdev/base-gorest`
+to your local development path.
+
 # Configurations
 
 We have two configurations:
