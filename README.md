@@ -4,7 +4,7 @@ Skeleton to create rest api using golang
 
 # Stacks
 
-- Package Manager : [glide](http://glide.sh/)
+- Package Manager : [dep](https://github.com/golang/dep)
 - Routing : [gorilla/mux](https://github.com/gorilla/mux)
 - Middlewares : [gorilla/handlers](github.com/gorilla/handlers)
 - Cmd Framework: [cobra](https://github.com/spf13/cobra)
@@ -46,11 +46,11 @@ variables inside container.
 ```
 WARNING
 
-You have to install glide!
+You have to install dep!
 ```
 
 ```
-glide up
+dep ensure
 ```
 
 # Routes
